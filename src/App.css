@@ -1,38 +1,120 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+/* src/App.css */
 .App {
+  display: flex;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  color: #fff;
+  height: 99vh;
+}
+
+.sidebar .logo {
+  width: 100%;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px;
+}
+
+.sidebar ul li a, .sidebar ul li button {
+  color: #6C7383;
+  text-decoration: none;
+}
+button {
+  transition: transform 0.2s ease-in-out;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+/* src/App.css */
+.about-page {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.about-banner {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.login-page {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-form input, .login-form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.error-msg {
+  color: red;
+  margin-top: 10px;
+  animation: fadeout 10s forwards;
+}
+.app-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-right: 0px !important;
+  height: auto;
+  background-color: #F5F7FF ;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.content {
+  margin-left: 235px; /* Adjust width based on your sidebar width */
+  padding: 20px;
+  width: 100%;
+  margin-right: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.content.closed{
+  margin-left: 130px;
 }
 
-@keyframes App-logo-spin {
+@keyframes fadeout {
   from {
-    transform: rotate(0deg);
+    opacity: 1;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 0;
   }
 }
+
+/* Add styles for other components */
